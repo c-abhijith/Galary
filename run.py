@@ -135,7 +135,7 @@ def home():
 
     # Set pagination variables
     page = request.args.get('page', 1, type=int)
-    per_page = 10  # Number of products per page
+    per_page = 8  # Number of products per page
 
     # Create a base query for products
     query = Product.query
@@ -199,7 +199,7 @@ def add_product():
             )
             db.session.add(new_product)
             db.session.commit()
-            flash('Product added successfully!', 'success')
+           
             return redirect(url_for('home'))  # Redirect to product list
         else:
             flash('Invalid file type. Allowed types are: png, jpg, jpeg, gif', 'error')
@@ -226,7 +226,7 @@ def update_product(product_id):
         product.price = form.price.data
         
         db.session.commit()  # Commit changes to the database
-        flash('Product updated successfully!', 'success')
+    
         return redirect(url_for('home'))  # Redirect to product list
 
     # Populate the form with existing product details for updating
@@ -274,7 +274,7 @@ def toggle_like(product_id):
       
         return redirect(url_for('home'))
 
-    flash('Invalid form submission', 'error')
+   
     return redirect(url_for('home'))
 
 if __name__ == '__main__':

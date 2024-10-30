@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #171616;
+    background-color: #100b0b;
     color: #333;
     margin: 0;
 }
@@ -25,7 +25,14 @@ body {
 .nav a:hover {
     text-decoration: underline;
 }
-
+.containers {
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .container {
     width: 300px;
     margin: 50px auto;
