@@ -3,16 +3,28 @@
 {% block content %}
 <div class="container">
     <h2>Login</h2>
-    <form action="{{ url_for('login') }}" method="POST">
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}  <!-- CSRF token -->
+
         <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            {{ form.username(id='username', size=32) }}
+            {% for error in form.username.errors %}
+                <div style="color: red; font-size: 10px;">{{ error }}</div>  <!-- Display username errors -->
+            {% endfor %}
         </div>
+
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            {{ form.password(id='password', size=32) }}
+            {% for error in form.password.errors %}
+                <div style="color: red; font-size: 10px;">{{ error }}</div>  <!-- Display password errors -->
+            {% endfor %}
         </div>
-        <button type="submit" class="btn">Login</button>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}  <!-- Submit button -->
+        </div>
     </form>
 </div>
 {% endblock %}
