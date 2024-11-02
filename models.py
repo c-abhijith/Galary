@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 # models.py
 
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()  # Initialize SQLAlchemy
+=======
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+>>>>>>> master
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
