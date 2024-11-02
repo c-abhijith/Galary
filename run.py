@@ -14,7 +14,7 @@ from wtforms import HiddenField
 # Initialize Flask app and database
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'  # Use environment variables for sensitive info
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://newdb_7uox_user:1Zr2DXeq0EHtC7GHA0RFucaUBgae4HJg@dpg-csg2oitds78s73e9bu50-a.oregon-postgres.render.com/newdb_7uox'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://galary_fw09_user:X5C1UxEfiuiggA7IhsYcy8filJ5dckbd@dpg-csis2ee8ii6s73cqhmcg-a.oregon-postgres.render.com/galary_fw09'
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
 migrate = Migrate(app, db)
